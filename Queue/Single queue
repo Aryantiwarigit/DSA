@@ -1,1 +1,68 @@
+#include <bits/stdc++.h> 
+class Queue {
+    int *arr;
+    int fr;
+    int rear;
+    int size;
 
+public:
+    Queue() {
+        // Implement the Constructor
+        size =  10000;
+        arr = new int[size];
+        fr = 0;
+        rear = 0;
+
+    }
+
+    /*----------------- Public Functions of Queue -----------------*/
+
+    bool isEmpty() {
+        if(fr == rear){
+            return true;
+        }
+        return false;
+    }
+
+    void enqueue(int data) {
+        // value push karo queue me
+        // check karo kahin full to nhi hai queue
+        if(rear == size){
+            cout<<"Queue is full"<<endl;
+        }
+        else{
+            arr[rear] = data;
+            rear++;
+        }
+
+    }
+
+    int dequeue() {
+        // element ko pop karne se pehle use return karna hai
+        // check karo kahin empty to nhi
+        int ans = arr[fr];
+        if(fr == rear){
+            return -1;
+        }
+        else{
+            
+            if(fr == rear){
+                fr = 0;
+                rear = 0;
+                return ans;
+            }
+            else{
+                fr++;
+            }
+        }
+        return ans;
+    }
+
+    int front() {
+        // check karo kahin khali to nhi hai apna queue
+        if(fr == rear){
+            return -1;
+        }
+        return arr[fr];
+    }
+};
