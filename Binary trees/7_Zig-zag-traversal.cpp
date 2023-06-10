@@ -42,35 +42,3 @@ class Solution{
     	
     }
 };
-
-//{ Driver Code Starts.
-
-/* Driver program to test size function*/
-
-  
-
-int main() {
-
-   
-    int t;
-    scanf("%d ", &t);
-    while (t--) {
-        string s, ch;
-        getline(cin, s);
-        
-        Node* root = buildTree(s);
-
-        vector<int> ans;
-        Solution ob;
-        ans = ob.zigZagTraversal(root) ;
-
-        for (int i = 0; i < ans.size(); i++)
-            cout << ans[i] << " ";
-
-        cout << endl;
-     
-    }
-    return 0;
-}
-
-// } Driver Code Ends
