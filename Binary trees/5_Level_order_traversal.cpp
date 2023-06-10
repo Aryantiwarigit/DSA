@@ -27,4 +27,28 @@ class Solution
 
 
 // APPROACH 2 :-  With spaces (usefull)
+class Solution {
+public:
+    vector<vector<int>> levelOrder(TreeNode* root) {
+  //Your code here
+    vector<vector<int>> ans;
+    if(root == NULL) return ans;
+    queue<TreeNode*> q;
+    q.push(root);
+  
+  while(!q.empty()){
+      int qsize = q.size();
+      vector<int> val;
+      for(int i=0; i<qsize; i++){
+          TreeNode* temp = q.front(); //isko andar hi likhna
+          q.pop();
+          val.push_back(temp->val);
+          if(temp->left) q.push(temp->left);
+          if(temp->right) q.push(temp->right);
+      }
+      ans.push_back(val);
+  }
+  return ans;
+}      
+};
 
