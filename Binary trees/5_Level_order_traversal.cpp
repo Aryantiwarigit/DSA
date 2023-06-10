@@ -1,3 +1,5 @@
+// Approach 1 :- without spacing (NOT SO USEFULL)
+
 class Solution
 {
     public:
@@ -22,3 +24,7 @@ class Solution
       return ans;
     }
 };
+
+
+// APPROACH 2 :-  With spaces (usefull)
+
