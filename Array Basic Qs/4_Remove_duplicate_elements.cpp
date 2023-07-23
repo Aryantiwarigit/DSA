@@ -1,4 +1,4 @@
-// IMPORTANT QS --> This require a simple algorithm (watch video)
+// IMPORTANT QS --> This require a simple algorithm (watch video of Ayushi sharma)
 
 int remove_duplicate(int a[],int n){
     // code here
