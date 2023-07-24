@@ -16,8 +16,28 @@ vector<int> replaceWithRank(vector<int> &arr, int N){
     }
     
     for(int i=0; i<N; i++){
-        int ind = distance(mp.begin(), mp.find(arr[i]));
+        int ind = distance(mp.begin(), mp.find(arr[i])); // --> This distance function is taking O(N) time to serach the index so because of this TLE is occuring.
         arr[i] = ind+1;
     }
     return arr;
 }
+
+
+// OPTIMIZED APPROACH :-
+vector<int> replaceWithRank(vector<int> &arr, int N){
+    // map<int,int> mp;
+    vector<int> v = arr;
+    sort(v.begin(), v.end());
+    int rank = 1;
+    unordered_map<int,int> mp;
+    for(auto x:v){
+        if(mp[x] == 0){
+            mp[x] = rank;
+            rank++;
+        }
+    }
+    for(int i=0; i<arr.size(); i++){
+        int rnk = mp[arr[i]];
+        arr[i] = rnk;
+    }
+    return arr;
