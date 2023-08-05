@@ -14,12 +14,12 @@ bool isAnagram(string a, string b){
         unordered_map<char,int> m;
         // step1 -> Put all values of A inside map and store their frequency
         for(auto x:a){
-            m[x] = m[x]+1;
+            m[x] = m[x]+1; //also can be written as m[x]++;
         }
         
         // Step 2-> Now traverse through B string and decrement every character frequency
         for(auto x:b){
-            m[x] = m[x]-1;
+            m[x] = m[x]-1; // m[x]-=1;
         }
         
         // Step 3-> Now if their frequency becomes 0 that means they're anagaram but if any of the character is nonzero thatmeans they're not anagram.
