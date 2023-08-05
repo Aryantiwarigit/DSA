@@ -17,7 +17,7 @@ void capitalize(string &s){
         if(i==0 || i==s.size()-1){ // i==0 means 1st letter and i==size-1 means last letter of the string
             s[i] = toupper(s[i]);
         }
-        // and for rest chech the space and capitalize previous and after of space
+        // and for rest check the space and capitalize previous and after of space.
         else if(s[i] == ' '){
             s[i-1] = toupper(s[i-1]);
             s[i+1] = toupper(s[i+1]);
